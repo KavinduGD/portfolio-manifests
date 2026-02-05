@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: frontend-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: alb
+
+    # Internet-facing ALB
+    alb.ingress.kubernetes.io/scheme: internet-facing
+
+    # Use IP mode (recommended for EKS/VPC CNI)
+    alb.ingress.kubernetes.io/target-type: ip
+
+    # Listen on 80 and 443
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
+
+    # ACM certificate for HTTPS
+    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-south-1:767397975047:certificate/b072abe0-1a80-4d69-b154-d047aabe6371"
+
+    # Force HTTP -> HTTPS redirect
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
+
+spec:
+  rules:
+    - host: www.kavindu-gihan.online
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend-svc
+                port:
+                  number: 80
