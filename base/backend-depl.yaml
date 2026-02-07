@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-depl
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: kavinduorg/backend:8e796101ad
+          env:
+            - name: MONGODB_HOST
+              value: mongodb-ss-0.mongodb-svc
+          envFrom:
+            - secretRef:
+                name: db-user-secret
+            - secretRef:
+                name: backend-secret
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: backend-pv
+              mountPath: /app/uploads
+      volumes:
+        - name: backend-pv
+          persistentVolumeClaim:
+            claimName: backend-pvc

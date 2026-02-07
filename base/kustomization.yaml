@@ -4,3 +4,8 @@ kind: Kustomization
 resources:
   - frontend-pod.yaml
   - frontend-svc.yaml
+  - mongodb-ss.yaml
+  - mongodb-svc.yaml
+  - backend-depl.yaml
+  - backend-svc.yaml
+  - backend-pvc.yaml
