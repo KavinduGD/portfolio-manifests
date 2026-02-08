@@ -2,5 +2,11 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - frontend-pod.yaml
+  - mongodb-ss.yaml
+  - mongodb-svc.yaml
+  - backend-depl.yaml
+  - backend-svc.yaml
+  - frontend-depl.yaml
   - frontend-svc.yaml
+  - admin-depl.yaml
+  - admin-svc.yaml

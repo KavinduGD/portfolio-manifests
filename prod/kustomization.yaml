@@ -6,3 +6,19 @@ namespace: prod
 resources:
   - ../base
   - ingress.yaml
+
+patches:
+  - path: backend-patch.yaml
+    target:
+      kind: Deployment
+      name: backend-depl
+
+  - path: frontend-patch.yaml
+    target:
+      kind: Deployment
+      name: frontend-depl
+
+  - path: admin-patch.yaml
+    target:
+      kind: Deployment
+      name: admin-depl
