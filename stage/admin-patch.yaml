@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-depl
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: admin
+          image: kavinduorg/stage-admin:e8864b3053

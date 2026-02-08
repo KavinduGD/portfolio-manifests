@@ -43,3 +43,14 @@ spec:
                 name: backend-svc
                 port:
                   number: 3000
+
+    - host: stage-admin.kavindu-gihan.online
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: admin-svc
+                port:
+                  number: 80
