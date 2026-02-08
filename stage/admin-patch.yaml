@@ -8,4 +8,4 @@ spec:
     spec:
       containers:
         - name: admin
-          image: kavinduorg/stage-admin:e8864b3053
+          image: kavinduorg/stage-admin:089f1b434e
