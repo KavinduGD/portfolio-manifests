@@ -8,4 +8,4 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: kavinduorg/frontend:1839c5091a
+          image: kavinduorg/frontend:c6dd419b2d
