@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-depl
+spec:
+  replicas: 3
+  template:
+    spec:
+      containers:
+        - name: backend
+          image: kavinduorg/backend:8e796101ad

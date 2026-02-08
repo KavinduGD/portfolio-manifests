@@ -6,3 +6,14 @@ namespace: stage
 resources:
   - ../base
   - ingress.yaml
+
+patches:
+  - path: backend-patch.yaml
+    target:
+      kind: Deployment
+      name: backend-depl
+
+  - path: frontend-patch.yaml
+    target:
+      kind: Deployment
+      name: frontend-depl
