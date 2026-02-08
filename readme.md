@@ -4,6 +4,7 @@
 - add gp3 ebs and efs storage class to cluster
 - create backend-pvc for prod and stage
 - create secret, configmap for prod, stage
+- for the first time add init container for mongodb-ss
 - create prod, stage argo cd applications
 
 ## edge cases

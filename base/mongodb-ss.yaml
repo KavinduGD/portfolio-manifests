@@ -17,16 +17,16 @@ spec:
       securityContext:
         fsGroup: 999
       # for the c scripts to run /data/db should be empty. So we can use an init container to clear the data in the volume before the main container starts.
-      # initContainers:
-      #   - name: clear-mongo-data
-      #     image: busybox:1.36
-      #     command:
-      #       - sh
-      #       - -c
-      #       - rm -rf /data/db/*
-      #     volumeMounts:
-      #       - name: mongodb-pvc
-      #         mountPath: /data/db
+      initContainers:
+        - name: clear-mongo-data
+          image: busybox:1.36
+          command:
+            - sh
+            - -c
+            - rm -rf /data/db/*
+          volumeMounts:
+            - name: mongodb-pvc
+              mountPath: /data/db
       containers:
         - name: mongodb
           image: mongodb/mongodb-community-server:8.0-ubuntu2204
