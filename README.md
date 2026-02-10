@@ -23,6 +23,9 @@ The architecture is designed for high availability, security, and scalability.
 ### System Workflow
 ![System Architecture](assets/architecture-diagram.png)
 
+### ArgoCD Application View
+![ArgoCD Application View](assets/argocd-diagram.png)
+
 ### Key Components
 - **AWS EKS**: Managed Kubernetes service for running containerized workloads.
 - **Argo CD**: GitOps continuous delivery tool that syncs the cluster state with this repository.
