@@ -22,13 +22,13 @@ spec:
                 name: db-user-secret
             - secretRef:
                 name: backend-secret
-          # resources:
-          #   limits:
-          #     memory: "256Mi"
-          #     cpu: "500m"
-          #   requests:
-          #     memory: "64Mi"
-          #     cpu: "250m"
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
           ports:
             - containerPort: 3000
           volumeMounts:
