@@ -44,6 +44,13 @@ spec:
             # but after adding the user for the first time, it will save in the /data/db and the script will not be needed.
             - name: db-init-config
               mountPath: /docker-entrypoint-initdb.d
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
       volumes:
         - name: db-init-config
           configMap:
