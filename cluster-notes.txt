@@ -18,3 +18,13 @@
 - make sure all the resources are deleted (specially ingress load balancers - if ingress load balancers exist, we cannot delete infra with `t destroy` command)
 - delete ebs volumes
 - efs volume get deleted automatically when we delete the cluster with `t destroy` command
+
+
+
+# Cluster deletion
+
+- goto argocd, delete applications
+- delete backend backend pvc
+- delete mongo pvc
+- delete all pvs
+- delete cluster with `t destroy` command
