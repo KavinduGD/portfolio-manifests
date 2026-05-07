@@ -16,7 +16,7 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
 
     # ACM certificate for both domains
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:381425824908:certificate/ae06c754-a8d7-4b88-9a21-a8ff53d88303
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:286093098549:certificate/b0e98b3d-7363-405f-9993-b87570b87ca1
 
     # Force HTTP → HTTPS
     alb.ingress.kubernetes.io/ssl-redirect: "443"
